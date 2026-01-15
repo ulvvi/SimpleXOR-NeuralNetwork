@@ -18,11 +18,6 @@ double sigmoid_derivative(double x) { return x * (1.0 - x); }
 
 //main layer struct
 struct layer {
-	//size of the layer that will input towards this one
-	int inputSize;
-	//number of neurons in this layer
-	int neuronCount;
-
 	//the weights and neuron mutiplication can be stored in a matrix
 	//weights[neuron][input}
 	vector<vector<double>> weights;
