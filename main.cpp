@@ -4,6 +4,10 @@
 #include <cstdlib>
 #include <ctime>
 
+
+#define learningRate 0.3
+#define MaxEpoch 30000
+
 using namespace std;
 
 /*
@@ -82,11 +86,10 @@ int main() {
 	layer outputLayer;
 	outputLayer.initLayer(2, 1); //2 inputs to final output
 
-	double learningRate = 0.3;
 
 	//epoch is how much we want to repeat this single "experiment"
 	//ex epoch will make this repeat 20000 times
-	for (int epoch = 0; epoch < 20000; epoch++) {
+	for (int epoch = 0; epoch < MaxEpoch; epoch++) {
 		double total_error = 0; // track the total error
 		//learn from the 4 possible results
 		for (int i = 0; i < 4; i++) {
