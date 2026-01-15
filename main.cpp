@@ -82,7 +82,7 @@ int main() {
 	layer outputLayer;
 	outputLayer.initLayer(2, 1); //2 inputs to final output
 
-	double learningRate = 0.2;
+	double learningRate = 0.3;
 
 	//epoch is how much we want to repeat this single "experiment"
 	//ex epoch will make this repeat 20000 times
@@ -131,6 +131,14 @@ int main() {
 				cout << "------------------------------------------" << endl;
 			}
 		}
+	}
+
+	//Final test to see if everything is working
+	cout << "\nFinal Results:" << endl;
+	for (int i = 0; i < 4; i++) {
+		fowardProp(hiddenLayer, In_data[i]);
+		fowardProp(outputLayer, hiddenLayer.outputs);
+		cout << In_data[i][0] << "," << In_data[i][1] << " -> " << outputLayer.outputs[0] << endl;
 	}
 
 	return 0;
